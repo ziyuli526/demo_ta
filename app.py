@@ -198,7 +198,7 @@ def update_today(api_key):
     dm.update_with_today_api_data(api_key=api_key)
     
 if CWA_API_KEY:
-    dm.update_with_today_api_data(api_key=CWA_API_KEY)
+    update_today(CWA_API_KEY)
 
 # 3. 側邊欄 (區域與風險篩選)
 with st.sidebar:
