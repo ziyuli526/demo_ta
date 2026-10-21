@@ -193,6 +193,10 @@ def get_data_manager():
 dm = get_data_manager()
 
 # 自動於後端維持 API 串接與數據載入
+@st.cache_data(ttl=3600)  # 3600 秒 = 1 小時
+def update_today(api_key):
+    dm.update_with_today_api_data(api_key=api_key)
+    
 if CWA_API_KEY:
     dm.update_with_today_api_data(api_key=CWA_API_KEY)
 
